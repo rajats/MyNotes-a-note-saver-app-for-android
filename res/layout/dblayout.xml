@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/etname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scale c*****k on creepiness" />
+
+    <EditText
+        android:id="@+id/etscale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/bupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update" />
+
+    <Button
+        android:id="@+id/bview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter row id" />
+
+    <EditText
+        android:id="@+id/etsqlrowinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/bgetinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get information" />
+
+    <Button
+        android:id="@+id/bmodify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit entry" />
+
+    <Button
+        android:id="@+id/bdelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete entry" />
+
+</LinearLayout>
+
