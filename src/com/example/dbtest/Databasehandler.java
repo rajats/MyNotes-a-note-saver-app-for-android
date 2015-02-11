@@ -76,7 +76,7 @@ public class Databasehandler {
 		int iDatetime=c.getColumnIndex(KEY_DATETIME);
 		
 		for(c.moveToFirst();!c.isAfterLast(); c.moveToNext()){
-			result=result+c.getString(iRowid)+""+c.getString(iBody)+""+c.getString(iDatetime)+"\n";
+			result=result+"  "+c.getString(iBody)+"   "+"\n"+c.getString(iDatetime)+"\n"+"\n";
 		}
 		return result;
 	}
