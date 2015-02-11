@@ -1,5 +1,7 @@
 package com.example.dbtest;
 
+import java.util.ArrayList;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -66,8 +68,9 @@ public class Databasehandler {
 		return ourdatabase.insert(DATABASE_TABLE, null, cv);
 		
 	}
-	public String getData() {
+	public ArrayList<String> getData() {
 		// TODO Auto-generated method stub
+		ArrayList<String> noteslist = new ArrayList<String>();
 		String[] columns=new String[]{KEY_ROWID,KEY_BODY,KEY_DATETIME};
 		Cursor c=ourdatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
 		String result="";
@@ -76,9 +79,10 @@ public class Databasehandler {
 		int iDatetime=c.getColumnIndex(KEY_DATETIME);
 		
 		for(c.moveToFirst();!c.isAfterLast(); c.moveToNext()){
-			result=result+"  "+c.getString(iBody)+"   "+"\n"+c.getString(iDatetime)+"\n"+"\n";
+			result=c.getString(iBody)+"\n"+"\n"+c.getString(iDatetime)+"\n";
+			noteslist.add(result);
 		}
-		return result;
+		return noteslist;
 	}
 	public String getBody(long l) throws SQLException {
 		// TODO Auto-generated method stub
