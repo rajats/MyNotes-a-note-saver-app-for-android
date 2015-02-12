@@ -32,7 +32,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		Databasehandler info=new Databasehandler(Viewnote.this);
 		info.open();
 		notelist = info.getData();
-		indexlist = info.getindexonly();
+		indexlist = info.getIndex();
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setListAdapter(new ArrayAdapter<String>(Viewnote.this, android.R.layout.simple_list_item_1,android.R.id.text1 ,notelist)); 
@@ -63,6 +63,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 			  Intent i3 = new Intent(Viewnote.this,Modifynote.class);
 			  Bundle extras = new Bundle();
 			  extras.putString("SELECTEDNOTE",returnedbody);
+			  extras.putString("SELECTEDINDEX",indexed);
 			  i3.putExtras(extras);
 			  startActivity(i3); 
 		  

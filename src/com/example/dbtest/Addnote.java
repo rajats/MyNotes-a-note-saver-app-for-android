@@ -44,7 +44,7 @@ public class Addnote extends Activity implements OnClickListener{
 
 				Databasehandler entry=new Databasehandler(Addnote.this);
 				entry.open();
-				entry.createentry(body, strdate);
+				entry.createEntry(body, strdate);
 				entry.close();
 			}
 			catch(Exception e){

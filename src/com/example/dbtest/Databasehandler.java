@@ -59,7 +59,7 @@ public class Databasehandler {
 	public void close(){
 		ourhelper.close();
 	}
-	public long createentry(String body, String datetime) {
+	public long createEntry(String body, String datetime) {
 		// TODO Auto-generated method stub
 		ContentValues cv=new ContentValues();
 		cv.put(KEY_BODY, body);
@@ -83,7 +83,7 @@ public class Databasehandler {
 		return noteslist;
 	}
 	
-	public ArrayList<String> getindexonly() {
+	public ArrayList<String> getIndex() {
 		// TODO Auto-generated method stub
 		ArrayList<String> indexlist = new ArrayList<String>();
 		String[] columns=new String[]{KEY_ROWID,KEY_BODY,KEY_DATETIME};
