@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,27 +43,23 @@ public class Viewnote extends ListActivity implements OnClickListener {
 	}
 	
 	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
+	protected void onListItemClick(ListView l, View v, final int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
-		final String indexed = indexlist.get(position);
-		long lmrow=Long.parseLong(indexed);
-		Databasehandler info=new Databasehandler(Viewnote.this);
-		info.open();
-		final String returnedbody=info.getBody(lmrow);
-		info.close();
-		/*
-		Intent i3 = new Intent(Viewnote.this,Modifynote.class);
-		Bundle extras = new Bundle();
-		extras.putString("SELECTEDNOTE",selected);
-		i3.putExtras(extras);
-		startActivity(i3); 
-		*/
+		
 		AlertDialog.Builder builder2=new AlertDialog.Builder(Viewnote.this);
 		  builder2.setPositiveButton("Edit",new DialogInterface.OnClickListener() {
 
 		  @Override
 		public void onClick(DialogInterface dialog, int which) {
+			  String indexed = indexlist.get(position);
+			  long lmrow=Long.parseLong(indexed);
+			  Databasehandler info=new Databasehandler(Viewnote.this);
+			  info.open();
+			  final String returnedbody=info.getBody(lmrow);
+			  info.close();
+			  
+			  
 			  Intent i3 = new Intent(Viewnote.this,Modifynote.class);
 			  Bundle extras = new Bundle();
 			  extras.putString("SELECTEDNOTE",returnedbody);
@@ -80,9 +77,21 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		  
 		public void onClick(DialogInterface dialog, int which) {
 
-		// TODO Auto-generated method stub
+			String indexed = indexlist.get(position);
+			long ldrow=Long.parseLong(indexed);
+			Databasehandler info=new Databasehandler(Viewnote.this);
+			info.open();
+			info.deleteEntry(ldrow);
+			info.close();
+			Context context = getApplicationContext();
+			CharSequence text = "Note Deleted!";
+			int duration = Toast.LENGTH_SHORT;
 
-		  Toast.makeText(getApplicationContext(), "U Clicked Cancel ", Toast.LENGTH_LONG).show();
+			Toast toast = Toast.makeText(context, text, duration);
+			toast.show();
+			Intent i1 = new Intent(Viewnote.this, Viewnote.class);
+			startActivity(i1);
+		  
 
 		  }
 

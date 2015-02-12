@@ -7,7 +7,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class Databasehandler {
@@ -74,7 +73,6 @@ public class Databasehandler {
 		String[] columns=new String[]{KEY_ROWID,KEY_BODY,KEY_DATETIME};
 		Cursor c=ourdatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
 		String result="";
-		int iRowid=c.getColumnIndex(KEY_ROWID);
 		int iBody=c.getColumnIndex(KEY_BODY);
 		int iDatetime=c.getColumnIndex(KEY_DATETIME);
 		
