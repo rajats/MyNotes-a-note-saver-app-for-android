@@ -7,6 +7,7 @@ import com.example.dbtest.R;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Addnote extends Activity implements OnClickListener{
 	
@@ -51,23 +53,22 @@ public class Addnote extends Activity implements OnClickListener{
 				entry.close();
 			}
 			catch(Exception e){
-				worked=false;
-				String error=e.toString();
-				Dialog d=new Dialog(this);
-				d.setTitle("errror");
-				TextView tv=new TextView(this);
-				tv.setText(error);
-				d.setContentView(tv);
-				d.show();
+				Context context = getApplicationContext();
+				CharSequence text = "Error!";
+				int duration = Toast.LENGTH_SHORT;
+
+				Toast toast = Toast.makeText(context, text, duration);
+				toast.show();
 			}
 			finally{
 				if (worked) {
-					Dialog d=new Dialog(this);
-					d.setTitle("Note saved!!!");
-					TextView tv=new TextView(this);
-					tv.setText("Success!!");
-					d.setContentView(tv);
-					d.show();
+					
+					Context context = getApplicationContext();
+					CharSequence text = "Note Saved!";
+					int duration = Toast.LENGTH_SHORT;
+
+					Toast toast = Toast.makeText(context, text, duration);
+					toast.show();
 				}
 			}
 		
