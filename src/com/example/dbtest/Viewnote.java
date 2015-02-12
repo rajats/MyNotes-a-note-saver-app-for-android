@@ -22,6 +22,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 	
 	Button add;
 	List<String> notelist;
+	List<String> indexlist;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -30,7 +31,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		Databasehandler info=new Databasehandler(Viewnote.this);
 		info.open();
 		notelist = info.getData();
-		
+		indexlist = info.getindexonly();
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setListAdapter(new ArrayAdapter<String>(Viewnote.this, android.R.layout.simple_list_item_1,android.R.id.text1 ,notelist)); 
@@ -44,8 +45,12 @@ public class Viewnote extends ListActivity implements OnClickListener {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
-		final String selected = notelist.get(position);
-		
+		final String indexed = indexlist.get(position);
+		long lmrow=Long.parseLong(indexed);
+		Databasehandler info=new Databasehandler(Viewnote.this);
+		info.open();
+		final String returnedbody=info.getBody(lmrow);
+		info.close();
 		/*
 		Intent i3 = new Intent(Viewnote.this,Modifynote.class);
 		Bundle extras = new Bundle();
@@ -60,7 +65,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		public void onClick(DialogInterface dialog, int which) {
 			  Intent i3 = new Intent(Viewnote.this,Modifynote.class);
 			  Bundle extras = new Bundle();
-			  extras.putString("SELECTEDNOTE",selected);
+			  extras.putString("SELECTEDNOTE",returnedbody);
 			  i3.putExtras(extras);
 			  startActivity(i3); 
 		  

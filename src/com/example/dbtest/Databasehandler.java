@@ -84,6 +84,21 @@ public class Databasehandler {
 		}
 		return noteslist;
 	}
+	
+	public ArrayList<String> getindexonly() {
+		// TODO Auto-generated method stub
+		ArrayList<String> indexlist = new ArrayList<String>();
+		String[] columns=new String[]{KEY_ROWID,KEY_BODY,KEY_DATETIME};
+		Cursor c=ourdatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
+		String result="";
+		int iRowid=c.getColumnIndex(KEY_ROWID);
+		for(c.moveToFirst();!c.isAfterLast(); c.moveToNext()){
+			result=c.getString(iRowid);
+			indexlist.add(result);
+		}
+		return indexlist;
+	}
+	
 	public String getBody(long l) throws SQLException {
 		// TODO Auto-generated method stub
 		String[] columns=new String[]{KEY_ROWID,KEY_BODY,KEY_DATETIME};
