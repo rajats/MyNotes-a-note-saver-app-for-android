@@ -1078,9 +1078,8 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int addnote=0x7f020057;
-        public static final int bgnd=0x7f020058;
-        public static final int ic_launcher=0x7f020059;
-        public static final int viewnote=0x7f02005a;
+        public static final int ic_launcher=0x7f020058;
+        public static final int viewnote=0x7f020059;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1097,7 +1096,7 @@ containing a value of this type.
         public static final int action_settings=0x7f05004a;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
-        public static final int badd=0x7f050048;
+        public static final int badd=0x7f050049;
         public static final int bdelete=0x7f050047;
         public static final int beginning=0x7f050011;
         public static final int bgetinfo=0x7f050045;
@@ -1156,7 +1155,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
-        public static final int view=0x7f050049;
+        public static final int view=0x7f050048;
         public static final int withText=0x7f05000c;
     }
     public static final class integer {
@@ -1212,11 +1211,10 @@ containing a value of this type.
         public static final int activity_main=0x7f030018;
         public static final int addnote=0x7f030019;
         public static final int dblayout=0x7f03001a;
-        public static final int menu=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
-        public static final int updatenote=0x7f03001d;
-        public static final int viewdb=0x7f03001e;
-        public static final int viewnote=0x7f03001f;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int updatenote=0x7f03001c;
+        public static final int viewdb=0x7f03001d;
+        public static final int viewnote=0x7f03001e;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
