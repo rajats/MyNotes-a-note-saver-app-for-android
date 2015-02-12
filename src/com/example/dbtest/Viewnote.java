@@ -2,26 +2,21 @@ package com.example.dbtest;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
-import com.example.dbtest.R;
-
-import android.app.Activity;
-import android.app.Dialog;
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class Viewnote extends ListActivity implements OnClickListener {
 	
@@ -45,22 +40,54 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		add.setOnClickListener(this);
 	}
 	
-	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
-		String selected = notelist.get(position);
+		final String selected = notelist.get(position);
 		
+		/*
 		Intent i3 = new Intent(Viewnote.this,Modifynote.class);
 		Bundle extras = new Bundle();
 		extras.putString("SELECTEDNOTE",selected);
 		i3.putExtras(extras);
-		startActivity(i3);
+		startActivity(i3); 
+		*/
+		AlertDialog.Builder builder2=new AlertDialog.Builder(Viewnote.this);
+		  builder2.setPositiveButton("Edit",new DialogInterface.OnClickListener() {
 
+		  @Override
+		public void onClick(DialogInterface dialog, int which) {
+			  Intent i3 = new Intent(Viewnote.this,Modifynote.class);
+			  Bundle extras = new Bundle();
+			  extras.putString("SELECTEDNOTE",selected);
+			  i3.putExtras(extras);
+			  startActivity(i3); 
+		  
+
+		  }
+
+		  });
+
+		  builder2.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+
+		@Override
+		  
+		public void onClick(DialogInterface dialog, int which) {
+
+		// TODO Auto-generated method stub
+
+		  Toast.makeText(getApplicationContext(), "U Clicked Cancel ", Toast.LENGTH_LONG).show();
+
+		  }
+
+		  });
+
+		  builder2.show();
+		
 	}
-
-
+	
+		
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub

@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class Modifynote extends Activity implements OnClickListener{
 	
-	Button save,delete;
+	Button save;
 	EditText note;
 	
 	@Override
@@ -24,7 +24,6 @@ public class Modifynote extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.updatenote);
 		save= (Button) findViewById(R.id.bsave);
-		delete= (Button) findViewById(R.id.bdelete);
 		note = (EditText) findViewById(R.id.notes);
 		
 		Intent intent = getIntent();
@@ -32,7 +31,6 @@ public class Modifynote extends Activity implements OnClickListener{
 		String gotnote = extras.getString("SELECTEDNOTE");
 		note.setText(gotnote);
 		save.setOnClickListener(this);
-		delete.setOnClickListener(this);
 		
 	}
 	
@@ -43,8 +41,6 @@ public class Modifynote extends Activity implements OnClickListener{
 		switch(arg0.getId()) {
 		case R.id.bsave:
 
-			break;
-		case R.id.bdelete:
 			break;
 		}
 	}
