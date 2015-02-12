@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -36,6 +38,11 @@ public class Modifynote extends Activity implements OnClickListener{
 		save.setOnClickListener(this);
 		
 	}
+	
+	protected void onPause(Bundle savedInstanceState) {
+		this.finish();
+	}
+	
 	
 	
 	@Override

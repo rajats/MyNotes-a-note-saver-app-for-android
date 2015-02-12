@@ -10,6 +10,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -40,6 +42,10 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		info.close();
 		add= (Button) findViewById(R.id.badd);
 		add.setOnClickListener(this);
+	}
+	
+	protected void onPause(Bundle savedInstanceState) {
+		this.finish();
 	}
 	
 	@Override
@@ -100,6 +106,32 @@ public class Viewnote extends ListActivity implements OnClickListener {
 
 		  builder2.show();
 		
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(android.view.Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blow= getMenuInflater();
+		//getMenuInflater().inflate(R.menu.main, menu);
+		blow.inflate(R.menu.main, menu );
+		return true;
+	}
+	
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch(item.getItemId()){
+		case R.id.aboutUs:
+			Intent i=new Intent(this,About.class);
+			startActivity(i);
+			break;
+		case R.id.exit:
+			finish();
+			
+			break;
+		}
+	return false;
 	}
 	
 		

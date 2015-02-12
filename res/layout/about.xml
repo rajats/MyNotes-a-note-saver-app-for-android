@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/abouttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is a note saver app built by by me for saving my notes.
+You can add notes delete notes and modify existing notes.App will store note
+with current date and time.Note will be displayed along with saved date and time.
+Thank you!!
+Hope you also like this app" >
+
+    </TextView>
+
+</LinearLayout>
+
