@@ -6,12 +6,16 @@
          android:paddingLeft="8dp"
          android:paddingRight="8dp"
          android:background="@drawable/viewnote">
-
+         
+    
      <ListView android:id="@android:id/list"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:layout_weight="1"
-               android:drawSelectorOnTop="false"/>
+
+               android:drawSelectorOnTop="false"
+               android:divider="#FFCC00"
+    		   android:dividerHeight="4px"/>
 
 
  </LinearLayout>

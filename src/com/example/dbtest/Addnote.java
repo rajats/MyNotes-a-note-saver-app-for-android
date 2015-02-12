@@ -19,7 +19,7 @@ public class Addnote extends Activity implements OnClickListener{
 	
 	Button save;
 	EditText note;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
