@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,8 +30,7 @@ public class Addnote extends Activity implements OnClickListener{
 		setContentView(R.layout.addnote);
 		save= (Button) findViewById(R.id.bsave);
 		note = (EditText) findViewById(R.id.notes);
-		save.setOnClickListener(this);
-		
+		save.setOnClickListener(this);		
 	}
 	
 
@@ -69,6 +69,8 @@ public class Addnote extends Activity implements OnClickListener{
 
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
+					Intent i1 = new Intent(this, Viewnote.class);
+					startActivity(i1);
 				}
 			}
 		
