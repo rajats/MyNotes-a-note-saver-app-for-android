@@ -39,9 +39,9 @@ public class Modifynote extends Activity implements OnClickListener{
 		
 	}
 	
-	protected void onPause(Bundle savedInstanceState) {
-		finish();
-	}
+	//protected void onPause(Bundle savedInstanceState) {
+	//	finish();
+	//}
 	
 	
 	
@@ -82,6 +82,7 @@ public class Modifynote extends Activity implements OnClickListener{
 					toast.show();
 					Intent i1 = new Intent(this, Viewnote.class);
 					startActivity(i1);
+					finish();
 				}
 			}
 		

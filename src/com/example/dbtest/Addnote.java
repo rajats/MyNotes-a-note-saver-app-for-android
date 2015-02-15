@@ -30,9 +30,9 @@ public class Addnote extends Activity implements OnClickListener{
 		save.setOnClickListener(this);		
 	}
 	
-	protected void onPause(Bundle savedInstanceState) {
-		finish();
-	}
+	//protected void onPause(Bundle savedInstanceState) {
+	//	finish();
+	//}
 	
 	
 	@Override
@@ -72,6 +72,7 @@ public class Addnote extends Activity implements OnClickListener{
 					toast.show();
 					Intent i1 = new Intent(this, Viewnote.class);
 					startActivity(i1);
+					finish();
 				}
 			}
 		

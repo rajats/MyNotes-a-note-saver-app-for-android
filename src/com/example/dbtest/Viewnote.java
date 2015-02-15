@@ -44,9 +44,9 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		add.setOnClickListener(this);
 	}
 	
-	protected void onPause(Bundle savedInstanceState) {
-		finish();
-	}
+	//protected void onPause(Bundle savedInstanceState) {
+	//	finish();
+	//}
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, final int position, long id) {
@@ -72,7 +72,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 			  extras.putString("SELECTEDINDEX",indexed);
 			  i3.putExtras(extras);
 			  startActivity(i3); 
-		  
+			  finish();
 
 		  }
 
@@ -98,7 +98,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 			toast.show();
 			Intent i1 = new Intent(Viewnote.this, Viewnote.class);
 			startActivity(i1);
-		  
+			finish();
 
 		  }
 
@@ -142,6 +142,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		case R.id.badd:
 			Intent i1 = new Intent(this, Addnote.class);
 			startActivity(i1);
+			finish();
 			break;
 		}
 		
