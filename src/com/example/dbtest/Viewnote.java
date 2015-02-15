@@ -45,7 +45,7 @@ public class Viewnote extends ListActivity implements OnClickListener {
 	}
 	
 	protected void onPause(Bundle savedInstanceState) {
-		this.finish();
+		finish();
 	}
 	
 	@Override

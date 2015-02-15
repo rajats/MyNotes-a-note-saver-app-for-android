@@ -31,7 +31,7 @@ public class Addnote extends Activity implements OnClickListener{
 	}
 	
 	protected void onPause(Bundle savedInstanceState) {
-		this.finish();
+		finish();
 	}
 	
 	
