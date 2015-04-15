@@ -8,7 +8,7 @@
         android:id="@+id/abouttext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is a note saver app built by by me(Rajat Kumar Singh) for saving my notes.
+        android:text="This is a note saver app built by by me(Rajat Kumar Singh).
 You can add notes delete notes and modify existing notes.App will store note
 with current date and time.Note will be displayed along with saved date and time.
 Thank you!!

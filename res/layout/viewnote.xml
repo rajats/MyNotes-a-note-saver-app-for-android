@@ -5,21 +5,18 @@
          android:layout_height="wrap_content"
          android:paddingLeft="8dp"
          android:paddingRight="8dp"
+         android:weightSum="10"
          android:background="@drawable/viewnote">
 
     <Button
         android:id="@+id/badd"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_weight="1"
-        
+        android:layout_height="50dp"
         android:text="Add New Note" />
     
      <ListView android:id="@android:id/list"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:layout_weight="1"
-
                android:drawSelectorOnTop="false"
                android:divider="#FFCC00"
     		   android:dividerHeight="4px"/>
