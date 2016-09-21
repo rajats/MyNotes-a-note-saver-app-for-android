@@ -86,10 +86,12 @@ public class Viewnote extends ListActivity implements OnClickListener {
 				Context context = getApplicationContext();
 				CharSequence text = "Note Deleted!";
 				int duration = Toast.LENGTH_SHORT;
-	
 				Toast toast = Toast.makeText(context, text, duration);
 				toast.show();
 				Intent i1 = new Intent(Viewnote.this, Viewnote.class);
+				Bundle b = new Bundle();
+				b.putBoolean("hide", hide); 
+				i1.putExtras(b); 
 				startActivity(i1);
 				finish();
 			  }
@@ -128,15 +130,18 @@ public class Viewnote extends ListActivity implements OnClickListener {
 		switch(arg0.getId()) {
 			case R.id.badd:
 				Intent i1 = new Intent(this, Addnote.class);
+				Bundle b1 = new Bundle();
+				b1.putBoolean("hide", hide); 
+				i1.putExtras(b1); 
 				startActivity(i1);
 				finish();
 				break;
 			case R.id.bviewhidden:
 				if(hide){
 					i1 = new Intent(this, Viewnote.class);
-					Bundle b = new Bundle();
-    				b.putBoolean("hide", false); 
-    				i1.putExtras(b); 
+					Bundle b2 = new Bundle();
+    				b2.putBoolean("hide", false); 
+    				i1.putExtras(b2); 
 				}
 				else
 					i1 = new Intent(this, SetPassword.class);

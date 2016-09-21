@@ -19,11 +19,15 @@ public class Addnote extends Activity implements OnClickListener{
 	
 	Button save,savehidden;
 	EditText note;
-
+	boolean hide=false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		Bundle b = getIntent().getExtras();
+		if(b != null)
+		    hide = b.getBoolean("hide");
 		setContentView(R.layout.addnote);
 		save= (Button) findViewById(R.id.bsave);
 		savehidden= (Button) findViewById(R.id.bsavehide);
@@ -98,6 +102,9 @@ public class Addnote extends Activity implements OnClickListener{
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
 					Intent i1 = new Intent(this, Viewnote.class);
+					Bundle b = new Bundle();
+    				b.putBoolean("hide", hide); 
+    				i1.putExtras(b); 
 					startActivity(i1);
 					finish();
 				}
