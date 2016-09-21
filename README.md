@@ -17,9 +17,5 @@ Whenever a new note is saved, the note along with the time and date when note is
 SHA-1 Hashing was used to generate hash for user password, generated hash was stored using SharedPreferences.
 
 # Working of app:  
-![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss1.jpg)  
-![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss2.jpg)  
-![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss3.jpg)  
-![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss4.jpg)  
-![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss5.jpg)  
-![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss6.jpg)  
+![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss1.jpg)![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss2.jpg)![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss3.jpg)  
+![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss4.jpg)![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss5.jpg)![alt tag](https://raw.githubusercontent.com/rajats/MyNotes-a-note-saver-app-for-android/master/Screenshots/ss6.jpg)
