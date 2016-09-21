@@ -1078,11 +1078,13 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int addnote=0x7f020057;
-        public static final int ic_launcher=0x7f020058;
-        public static final int viewnote=0x7f020059;
+        public static final int bgnd=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int logo=0x7f02005a;
+        public static final int viewnote=0x7f02005b;
     }
     public static final class id {
-        public static final int aboutUs=0x7f050040;
+        public static final int aboutUs=0x7f050048;
         public static final int abouttext=0x7f05003c;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
@@ -1097,9 +1099,14 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f050024;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
-        public static final int badd=0x7f05003f;
+        public static final int askPasswordText=0x7f050041;
+        public static final int badd=0x7f050046;
+        public static final int bcheckpasswd=0x7f050042;
         public static final int beginning=0x7f050011;
         public static final int bsave=0x7f05003e;
+        public static final int bsavehide=0x7f05003f;
+        public static final int bsavepasswd=0x7f050045;
+        public static final int bviewhidden=0x7f050047;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;
@@ -1108,7 +1115,8 @@ containing a value of this type.
         public static final int dropdown=0x7f05000f;
         public static final int edit_query=0x7f050030;
         public static final int end=0x7f050013;
-        public static final int exit=0x7f050041;
+        public static final int enteredpasswd=0x7f050040;
+        public static final int exit=0x7f050049;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
         public static final int home=0x7f050014;
@@ -1123,6 +1131,8 @@ containing a value of this type.
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
         public static final int notes=0x7f05003d;
+        public static final int passwdView=0x7f050043;
+        public static final int passwdtext=0x7f050044;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
@@ -1200,10 +1210,13 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
         public static final int about=0x7f030018;
-        public static final int addnote=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
-        public static final int updatenote=0x7f03001b;
-        public static final int viewnote=0x7f03001c;
+        public static final int activity_main=0x7f030019;
+        public static final int addnote=0x7f03001a;
+        public static final int askpasswd=0x7f03001b;
+        public static final int setpasswd=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int updatenote=0x7f03001e;
+        public static final int viewnote=0x7f03001f;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -2630,7 +2643,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x01010438
+            0x0101012f, 0x01010130, 0x01010131, 0x01010435
         };
         /**
           <p>

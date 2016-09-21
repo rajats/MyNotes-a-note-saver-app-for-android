@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class Addnote extends Activity implements OnClickListener{
 	
-	Button save;
+	Button save,savehidden;
 	EditText note;
 
 	@Override
@@ -26,15 +26,12 @@ public class Addnote extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.addnote);
 		save= (Button) findViewById(R.id.bsave);
+		savehidden= (Button) findViewById(R.id.bsavehide);
 		note = (EditText) findViewById(R.id.notes);
-		save.setOnClickListener(this);		
+		save.setOnClickListener(this);	
+		savehidden.setOnClickListener(this);	
 	}
-	
-	//protected void onPause(Bundle savedInstanceState) {
-	//	finish();
-	//}
-	
-	
+
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
@@ -43,21 +40,52 @@ public class Addnote extends Activity implements OnClickListener{
 			boolean worked=true;
 			try {
 				String body=note.getText().toString();
-				
+				int hide=0;
 				Calendar c1 = Calendar.getInstance();
 				SimpleDateFormat sdf1 = new SimpleDateFormat("d/M/yy h:m:s a");
 				String strdate = sdf1.format(c1.getTime());
-
 				Databasehandler entry=new Databasehandler(Addnote.this);
 				entry.open();
-				entry.createEntry(body, strdate);
+				entry.createEntry(body, strdate, hide);
 				entry.close();
 			}
 			catch(Exception e){
 				Context context = getApplicationContext();
 				CharSequence text = "Error!";
 				int duration = Toast.LENGTH_SHORT;
-
+				Toast toast = Toast.makeText(context, text, duration);
+				toast.show();
+			}
+			finally{
+				if (worked) {
+					Context context = getApplicationContext();
+					CharSequence text = "Note Saved!";
+					int duration = Toast.LENGTH_SHORT;
+					Toast toast = Toast.makeText(context, text, duration);
+					toast.show();
+					Intent i1 = new Intent(this, Viewnote.class);
+					startActivity(i1);
+					finish();
+				}
+			}
+		break;
+		case R.id.bsavehide:
+			worked=true;
+			try {
+				String body=note.getText().toString();
+				int hide=1;
+				Calendar c1 = Calendar.getInstance();
+				SimpleDateFormat sdf1 = new SimpleDateFormat("d/M/yy h:m:s a");
+				String strdate = sdf1.format(c1.getTime());
+				Databasehandler entry=new Databasehandler(Addnote.this);
+				entry.open();
+				entry.createEntry(body, strdate, hide);
+				entry.close();
+			}
+			catch(Exception e){
+				Context context = getApplicationContext();
+				CharSequence text = "Error!";
+				int duration = Toast.LENGTH_SHORT;
 				Toast toast = Toast.makeText(context, text, duration);
 				toast.show();
 			}
@@ -67,17 +95,13 @@ public class Addnote extends Activity implements OnClickListener{
 					Context context = getApplicationContext();
 					CharSequence text = "Note Saved!";
 					int duration = Toast.LENGTH_SHORT;
-
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
 					Intent i1 = new Intent(this, Viewnote.class);
 					startActivity(i1);
 					finish();
 				}
-			}
-		
+			}		
 		}
-		
 	}
-
 }

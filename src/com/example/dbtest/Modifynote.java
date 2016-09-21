@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class Modifynote extends Activity implements OnClickListener{
 	
-	Button save;
+	Button save,savehidden;;
 	EditText note;
 	long lmrow;
 	
@@ -27,8 +27,8 @@ public class Modifynote extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.updatenote);
 		save= (Button) findViewById(R.id.bsave);
+		savehidden= (Button) findViewById(R.id.bsavehide);
 		note = (EditText) findViewById(R.id.notes);
-		
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();
 		String gotnote = extras.getString("SELECTEDNOTE");
@@ -36,15 +36,9 @@ public class Modifynote extends Activity implements OnClickListener{
 		lmrow=Long.parseLong(gotindex);
 		note.setText(gotnote);
 		save.setOnClickListener(this);
-		
+		savehidden.setOnClickListener(this);	
 	}
-	
-	//protected void onPause(Bundle savedInstanceState) {
-	//	finish();
-	//}
-	
-	
-	
+
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
@@ -53,31 +47,27 @@ public class Modifynote extends Activity implements OnClickListener{
 			boolean worked=true;
 			try {
 				String body=note.getText().toString();
-				
+				int hide=0;
 				Calendar c1 = Calendar.getInstance();
 				SimpleDateFormat sdf1 = new SimpleDateFormat("d/M/yy h:m:s a");
 				String strdate = sdf1.format(c1.getTime());
-
 				Databasehandler update=new Databasehandler(Modifynote.this);
 				update.open();
-				update.updateEntry(lmrow, body, strdate);
+				update.updateEntry(lmrow, body, strdate, hide);
 				update.close();
 			}
 			catch(Exception e){
 				Context context = getApplicationContext();
 				CharSequence text = "Error!";
 				int duration = Toast.LENGTH_SHORT;
-
 				Toast toast = Toast.makeText(context, text, duration);
 				toast.show();
 			}
 			finally{
 				if (worked) {
-					
 					Context context = getApplicationContext();
 					CharSequence text = "Note updated!";
 					int duration = Toast.LENGTH_SHORT;
-
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
 					Intent i1 = new Intent(this, Viewnote.class);
@@ -85,9 +75,42 @@ public class Modifynote extends Activity implements OnClickListener{
 					finish();
 				}
 			}
-		
+			break;
+		case R.id.bsavehide:
+			worked=true;
+			try {
+				String body=note.getText().toString();
+				int hide=1;
+				Calendar c1 = Calendar.getInstance();
+				SimpleDateFormat sdf1 = new SimpleDateFormat("d/M/yy h:m:s a");
+				String strdate = sdf1.format(c1.getTime());
+				Databasehandler update=new Databasehandler(Modifynote.this);
+				update.open();
+				update.updateEntry(lmrow, body, strdate, hide);
+				update.close();
+			}
+			catch(Exception e){
+				Context context = getApplicationContext();
+				CharSequence text = "Error!";
+				int duration = Toast.LENGTH_SHORT;
+				Toast toast = Toast.makeText(context, text, duration);
+				toast.show();
+			}
+			finally{
+				if (worked) {			
+					Context context = getApplicationContext();
+					CharSequence text = "Note updated!";
+					int duration = Toast.LENGTH_SHORT;
+					Toast toast = Toast.makeText(context, text, duration);
+					toast.show();
+					Intent i1 = new Intent(this, Viewnote.class);
+					Bundle b = new Bundle();
+    				b.putBoolean("hide", true); 
+    				i1.putExtras(b); 
+    				startActivity(i1);
+					finish();
+				}
+			}		
 		}
-		
 	}
-
 }

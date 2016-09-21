@@ -8,13 +8,14 @@
         android:id="@+id/abouttext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is a note saver app built by by me(Rajat Kumar Singh).
-You can add notes delete notes and modify existing notes.App will store note
-with current date and time.Note will be displayed along with saved date and time.
-Thank you!!
-Hope you also like this app" >
-
-    </TextView>
-
+        android:text="This is a note saver app built for storing secret information.
+		You can add notes delete notes and modify existing notes.App will store note
+		with current date and time.Note will be displayed along with saved date and time.
+		Notes can be hidden based on password, only if correct password is entered then 
+		hidden notes will be visible.
+		Thank you!!
+		Hope you also like this app" >
+	</TextView>
+	
 </LinearLayout>
 

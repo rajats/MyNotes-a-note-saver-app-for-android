@@ -14,6 +14,13 @@
         android:layout_height="50dp"
         android:text="Add New Note" />
     
+    <Button
+        android:id="@+id/bviewhidden"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="View Hidden Notes" />
+
+    
      <ListView android:id="@android:id/list"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
